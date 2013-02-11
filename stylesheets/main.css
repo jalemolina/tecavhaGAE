@@ -1,0 +1,461 @@
+body, p, div, h1, h2, h3, p, ul, ol, li, img, header, section, aside, footer, button {
+margin: 0; padding: 0; border: 0; list-style: none; margin-top: -1.3%;
+}
+
+@import url('http://fonts.googleapis.com/css?family=Alegreya|Spinnaker');
+
+/* Main */
+#menu
+{
+        width: 50%;
+        margin: 0;
+        padding: 2% 0 0 50%;
+        list-style: none;
+        -moz-border-radius: 0;
+        border-radius: 0;
+-moz-box-shadow: 0px 5px 5px #171717;
+-webkit-box-shadow: 0px 5px 5px #171717;
+box-shadow: 0px 6px 6px #171717;
+}
+
+#menu li
+{
+        float: left;
+        padding: 0 0 10px 0;
+        position: relative;
+
+}
+
+#menu a
+{
+        float: left;
+        height: 25px;
+        padding: 0 25px;
+        color: #BBB;
+        text-transform: uppercase;
+        font: bold 12px/25px 'Spinnaker';
+        text-decoration: none;
+        text-shadow: 5px 5px 5px #000000;
+}
+
+#menu li:hover > a
+{
+        color: #fafafa;
+}
+
+#menu li:hover > ul
+{
+        display: block;
+}
+
+/* Sub-menu */
+
+#menu ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 99999;
+    background: #502D16;
+    background: -moz-linear-gradient(#502D16, #28170B);
+    background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #28170B),color-stop(1, #502D16));
+    background: -webkit-linear-gradient(#502D16, #28170B);
+    background: linear-gradient(#502D16, #28170B);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+#menu ul li
+{
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    -moz-box-shadow: 0 1px 0 #28170B111, 0 2px 0 #777777;
+    -webkit-box-shadow: 0 1px 0 #28170B111, 0 2px 0 #777777;
+    box-shadow: 0 1px 0 #28170B111, 0 2px 0 #777777;
+}
+
+#menu ul li:last-child
+{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#menu ul a
+{
+    padding: 10px;
+        height: auto;
+    line-height: 1;
+    display: block;
+    white-space: nowrap;
+    float: none;
+    text-transform: none;
+}
+
+
+#menu ul a:hover
+{
+    background: #75AADB;
+    background: -moz-linear-gradient(#75AADB,  #6897c3);
+    background: -webkit-gradient(linear, left top, left bottom, from(#75AADB), to(#6897c3));
+    background: -webkit-linear-gradient(#75AADB,  #6897c3);
+    background: linear-gradient(#75AADB,  #6897c3);
+}
+
+#menu ul li:first-child a
+{
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+#menu ul li:first-child a:after
+{
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #502D16;
+}
+
+#menu ul li:first-child a:hover:after
+{
+    border-bottom-color: #75AADB;
+}
+
+#menu ul li:last-child a
+{
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Clear floated elements */
+#menu:after
+{
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+}
+
+header {
+    background: #28170B;
+    background: -moz-linear-gradient(#502D16, #28170B);
+    background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #28170B),color-stop(1, #502D16));
+    background: -webkit-linear-gradient(#502D16, #28170B);
+    background: linear-gradient(#502D16, #28170B);
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -moz-box-shadow: 0 2px 1px #9c9c9c;
+    -webkit-box-shadow: 0 2px 1px #9c9c9c;
+    box-shadow: 0 2px 1px #9c9c9c;
+}
+
+header h1 {
+    font-family: 'Alegreya', serif;
+    font-weight: 400;
+    font-size: 48px;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 0.013em;
+    word-spacing: 0.047em;
+    position: relative;
+    color: #75AADB;
+    text-shadow: 0 0 .3em #75AADB;
+    padding: 5% 0 0 275px;
+}
+
+header h2 {
+    font-family: 'Alegreya', serif;font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 0.013em;
+    word-spacing: 0.047em;
+
+    position: relative;
+    color: #75AADB;
+    text-shadow: 0 0 .3em #75AADB;
+    padding: 1% 0 0 275px;
+}
+
+header img {
+    position: absolute;
+    top: 1%;
+    left: 0;
+    width: 17.5em;
+    height: 17.5em;
+}
+
+div#cuerpo { /*para separar el cuerpo del encabezado*/
+    padding: 6% 0 0 2%;
+    height: 50%;
+}
+
+div#log {
+    position: absolute;
+    top: 0px;
+    right: 35px;
+    background: #75AADB;
+    background: -moz-linear-gradient(#75AADB,  #6897c3);
+    background: -webkit-gradient(linear, left top, left bottom, from(#75AADB), to(#6897c3));
+    background: -webkit-linear-gradient(#75AADB,  #6897c3);
+    background: linear-gradient(#75AADB,  #6897c3);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 20px #75AADB;
+    -webkit-box-shadow: 0 0 20px #75AADB;
+    box-shadow: 0 0 20px #75AADB;
+    padding: 10px;
+    height: auto;
+    line-height: 1;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
+    -webkit-transform: rotate(0) scale(1) skew(0) translate(0, -4px);
+    -moz-transform: rotate(0) scale(1) skew(0) translate(0, -4px);
+    -o-transform: rotate(0) scale(1) skew(0) translate(0, -4px);
+}
+
+div#log:hover {
+    -webkit-transform: rotate(0) scale(1) skew(0) translate(0, 7px);
+    -moz-transform: rotate(0) scale(1) skew(0) translate(0, 7px);
+    -o-transform: rotate(0) scale(1) skew(0) translate(0, 7px);
+    display: block;
+}
+
+#log a {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font: 14px 'Spinnaker';
+    text-decoration: none;
+    text-shadow: 0 0 0.3em #FFFFFF;
+}
+
+p {
+    margin: 0 0 0 0;
+    font: 14px 'Spinnaker';
+    text-decoration: none;
+    text-shadow: 0 0 0.3em #FFFFFF;
+}
+
+aside {
+    float: left;
+    margin: 60px 20px 5px 0px;
+}
+
+/*#################################*/
+
+aside menu{
+    /*Bordes redondeados*/
+    /*-webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#CCC));
+    /*Degradados*/
+    /*background-image: -moz-linear-gradient(top center, #FFF, #CCC);
+    background-image: linear-gradient(top, #FFF, #CCC);*/
+    /*overflow:hidden;
+    padding:10px;*/
+    width:200px;
+    height:500px;
+}
+
+/*#################################*/
+
+
+section
+{
+display: block;
+}
+
+section div{
+position:relative;
+}
+
+.accordion
+{
+width: 200px;
+padding: 0;
+margin: 0 auto;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+opacity:.9;
+}
+
+.accordion section
+{
+border-bottom: 1px solid #A6C8DB;
+margin: 3px;
+background: #b6c0d6;
+background: -moz-linear-gradient(top, #b6c0d6 0%, #e0e8f9 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b6c0d6), color-stop(100%,#e0e8f9));
+background: -webkit-linear-gradient(top, #b6c0d6 0%,#e0e8f9 100%);
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+.accordion h2,
+.accordion p
+{
+margin: 0;
+text-decoration:none;
+}
+
+.accordion h2{
+background: #75AADB;
+background: -moz-linear-gradient(top, #75AADB 0%, #6897c3 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#75AADB), color-stop(100%,#6897c3));
+background: -webkit-linear-gradient(top, #75AADB 0%,#6897c3 100%);
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+position:relative;
+}
+
+.submenu a{
+text-decoration:none;
+color: #e3eeff;
+background:#8692ac;
+padding:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+border:1px solid #6b7895;
+-moz-transition: all 2s ease-in-out;
+-webkit-transition: all 2s ease-in-out;
+opacity:.7;
+}
+
+.submenu a:hover{
+background:#606c88;
+opacity:1;
+text-shadow: 0 0 1em #FFFFFF;
+-moz-transition: all .5s ease-in-out;
+-webkit-transition: all .5s ease-in-out;
+-moz-box-shadow:1px 1px 0 #fff;
+-webkit-box-shadow:1px 1px 0 #fff;
+}
+
+.accordion p
+{
+padding: 10px;
+font: 11px/1.5 'Spinnaker';
+color:#53607d;
+}
+
+.accordion h2 a
+{
+display: block;
+font: 14px/1 'Spinnaker';
+font-weight:bold;
+padding: 10px;
+color: #FFFFFF;
+text-shadow: 0.3em 0.3em 1em #000000;
+text-decoration: none;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+.accordion h2 a:hover
+{
+background: #3f4c6b;
+background: -moz-linear-gradient(top, #3f4c6b 0%, #606c88 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f4c6b), color-stop(100%,#606c88));
+background: -webkit-linear-gradient(top, #3f4c6b 0%,#606c88 100%);
+}
+
+.accordion h2 + div
+{
+height: 0;
+overflow: hidden;
+-moz-transition: height 0.3s ease-in-out;
+-webkit-transition: height 0.3s ease-in-out;
+transition: height 0.3s ease-in-out;
+}
+
+.accordion :target h2 a:after
+{
+margin-top: -3px;
+border-top: 5px solid #333;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+}
+
+.accordion :target h2:after{
+position: absolute;
+right: 10px;
+top: 0;
+}
+
+.accordion :target h2 + div
+{
+height: 200px;
+}
+
+div[id^="oculto"] {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border: 0 0 0 0;
+    overflow: auto;
+    font: 14px/1 'Spinnaker';
+}
+
+div[id^="oculto"] h1{
+    font-family: 'Alegreya', serif;
+    font-weight: 400;
+    font-size: 48px;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 0.013em;
+    word-spacing: 0.047em;
+    color: #75AADB;
+    text-shadow: 0 0 .3em #75AADB;
+    padding: 5% 0 0 275px;
+}
+
+div[id^="oculto"] h2, input {
+    font-family: 'Spinnaker';
+}
+
+div[id^="oculto"] h2 {
+    font-size: 18px;
+}
+
+footer {
+    color: #FFFFFF;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    bottom: -1px;
+    height: 40px;
+    background: #28170B;
+    background: -moz-linear-gradient(#502D16, #28170B);
+    background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #28170B),color-stop(1, #502D16));
+    background: -webkit-linear-gradient(#502D16, #28170B);
+    background: linear-gradient(#502D16, #28170B);
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -moz-box-shadow: 0 -2px 1px #9c9c9c;
+    -webkit-box-shadow: 0 -2px 1px #9c9c9c;
+    box-shadow: 0 -2px 1px #9c9c9c;
+}

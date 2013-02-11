@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+    <meta  http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>Escuela Técnica "Amalia del Valle Herrera de Aguirre"</title>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" media="screen"/>
+        <link rel="shortcut icon" href="/images/logo2.png">
+        <link href='http://fonts.googleapis.com/css?family=Alegreya|Spinnaker' rel='stylesheet' type='text/css'>
+        <script language="JavaScript" src="/scripts/codigo.js" type="text/javascript"></script>
+    </head>
+
+    <body onload="ocultartodo(this)">
+    <header>
+        <div>
+            <figure>
+                <img src="/images/logo2.svg" alt="logo" />
+            </figure>
+        </div>
+            <h1>Escuela Técnica</h1>
+            <h2>"Amalia del Valle Herrera de Aguirre"</h2>
+        <div id="log">
+            {{usuario}} | <a href="{{diracceso}}">{{estado}}</a>
+        </form>
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Personal</a>
+                    <ul>
+                        <li><a href="/directivos">Directivos</a></li>
+                        <li><a href="/administrativos">Administrativos</a></li>
+                        <li><a href="/preceptores">Preceptores</a></li>
+                        <li><a href="/profesores">Profesores</a></li>
+                    </ul>
+                </li>
+                <li><a href="/padres">Padres</a></li>
+                <li><a href="/alumnos">Alumnos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <menu>
+            <div class="accordion">
+                <section id="1">
+                    <h2><a href="#1">Exámenes</a></h2>
+                    <div>
+                        <p class="submenu"><a href="#1" onClick="mostrar(this, 0)">Inscribir Alumnos</a></p>
+                        <p class="submenu"><a href="#1" onClick="mostrar(this, 1)">Acta Volante</a></p>
+                    </div>
+                </section>
+                <section id="2">
+                    <h2><a href="#2">Cursado</a></h2>
+                    <div>
+                        <p>Proximamente</p>
+                    </div>
+                </section>
+                <section id="3">
+                    <h2><a href="#3">Algo</a></h2>
+                    <div>
+                        <p>Proximamente</p>
+                    </div>
+                </section>
+                <section id="4">
+                    <h2><a href="#4">Ayuda</a></h2>
+                    <div>
+                        <p>Proximamente</p>
+                    </div>
+                </section>
+            </div>
+        </menu>
+    </aside>
+    <div id="cuerpo">
+        <p>{{ contenido }}</p>
+        <div id="oculto0">
+        <h1>Inscripción a exámenes</h1>
+            <form method="post" action="/inscribir">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                        <label for="dni">DNI:</label>
+                        <input type="tel" name="dni" placeholder="(Sin separdor de miles)" required/>
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" name="apellido" placeholder="Apellido del alumno" required/>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" placeholder="Nombre del alumno" required/>
+                </fieldset>
+                <fieldset>
+                    <legend>Datos del examen</legend>
+                        <label for="examen">Examen:</label>
+                            <select id="examen" name="examen">
+                                <option label="[Seleccione el examen]" value="-1" selected/>
+                                <option label="REGULARES" value="REGULARES"/>
+                                <option label="PREVIOS"value="PREVIOS"/>
+                                <option label="LIBRES"value="LIBRES"/>
+                                <option label="EQUIVALENCIAS"value="EQUIVALENCIAS"/>
+                                <option label="COMPLEMENTARIOS"value="COMPLEMENTARIOS"/>
+                            </select>
+                        <label for="curso">Curso:</label>
+                            <input id="curso" name="curso" type="number" min="1" max="7" onchange="cambiar_asignaturas('curso', 'asignatura')" required/>
+                        <label for="division">División:</label>
+                            <select id="division" name="division">
+                                <option label="'A'" value="'A'"/>
+                                <option label="'B'" value="'B'"/>
+                                <option label="'C'" value="'C'"/>
+                                <option label="'D'" value="'D'"/>
+                                <option label="'E'" value="'E'"/>
+                                <option label="'F'" value="'F'"/>
+                                <option label="'G'" value="'G'"/>
+                                <option label="'H'" value="'H'"/>
+                            </select>
+                        <label for="asignatura">Asignatura:</label>
+                            <select id="asignatura" name="asignatura">
+                                <option value="---"/>
+                            </select>
+                </fieldset>
+                <input type="submit" action="/inscribir" value="Inscribir" />
+                <input type='button' onclick='window.print();' value='Imprimir' />
+                <input type="reset" name="limpiar" value="Limpiar formulario" />
+             </form>
+        </div>
+        <div id="oculto1">
+            <h1>Impresión de acta volante</h1>
+            <form method="post" action="/actavolante" target="_blank">
+                <fieldset>
+                    <legend>Acta volante de</legend>
+                        <label for="examen">Exámenes:</label>
+                            <select id="examen" name="examen">
+                                <option label="[Seleccione el examen]" value="-1" selected/>
+                                <option label="REGULARES" value="REGULARES"/>
+                                <option label="PREVIOS"value="PREVIOS"/>
+                                <option label="LIBRES"value="LIBRES"/>
+                                <option label="EQUIVALENCIAS"value="EQUIVALENCIAS"/>
+                                <option label="COMPLEMENTARIOS"value="COMPLEMENTARIOS"/>
+                            </select>
+                        <label for="curso_acta">Curso:</label>
+                            <input id="curso_acta" name="curso_acta" type="number" min="1" max="7" onchange="cambiar_asignaturas('curso_acta', 'asignatura_acta')" required/>
+                        <label for="asignatura_acta">Asignatura:</label>
+                            <select id="asignatura_acta" name="asignatura_acta">
+                                <option value="---"/>
+                            </select>
+                </fieldset>
+                <input type="submit" action="/actavolante" value="Imprimir Acta volante" target="_blank"/>
+             </form>
+        </div>
+        <div id="oculto2">
+            <p>formulario 2</p>
+        </div>
+        <div id="oculto3">
+            <p>formulario 3</p>
+        </div>
+        <div id="oculto4">
+            <p>formulario 4</p>
+        </div>
+        <div id="oculto5">
+            <p>formulario 5</p>
+        </div>
+        <div id="oculto6">
+            <p>formulario 6</p>
+        </div>
+        <div id="oculto7">
+            <p>formulario 7</p>
+        </div>
+        <div id="oculto8">
+            <p>formulario 8</p>
+        </div>
+        <div id="oculto9">
+            <p>formulario 9</p>
+        </div>
+    </div>
+    </body>
+    <!--<footer>
+        © 2012 J. Alejandro Molina
+    </footer>-->
+</html>
