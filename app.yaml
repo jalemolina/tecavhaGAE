@@ -1,5 +1,5 @@
-application: tecavha2
-version: 1
+application: tecavha
+version: 4
 runtime: python
 api_version: 1
 
@@ -7,8 +7,8 @@ handlers:
 - url: /stylesheets
   static_dir: stylesheets
 
-- url: /scripts
-  static_dir: scripts
+- url: /js
+  static_dir: js
 
 - url: /images
   static_dir: images
