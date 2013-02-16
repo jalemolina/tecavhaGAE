@@ -9,114 +9,111 @@
         <link href='http://fonts.googleapis.com/css?family=Alegreya|Spinnaker' rel='stylesheet' type='text/css'>
     </head>
     <header>
-
     </header>
     <body>
-
-            <table class="zebra">
-                <thead>
-                    <tr class="borde">
-                        <th rowspan="2" class="tiny">N° de<BR>Orden</th>
-                        <th rowspan="2"scope="col">N° de Permiso</th>
-
-                        <th rowspan="2"scope="col">Apellido y Nombres</th>
-                        <th colspan="3" scope="col" class="tiny">Calificaciones</th>
-
-                        <th colspan="2" scope="col" class="tiny">N° de las bolillas</th>
-
-                        <th rowspan="2"scope="col">Documento de Identidad</th>
-                    </tr>
+        <table>
+            <thead>
+                <tr id="resto">
+                    <th class="sinborde" colspan="9">
+                        <div class="divheader">
+                            <h2 style="margin: 3mm 2mm 0mm 2mm; padding: 0; border: 0; list-style: none;">Escuela Técnica</h2>
+                            <h3 style="margin: 3mm 2mm 0mm 2mm; padding: 0; border: 0; list-style: none;">"Amalia del Valle Herrera de Aguirre"</h3>
+                            <div class="divheader" id="T1">
+                                <p style="margin: 1.5mm 0mm 0mm 0mm;"><b>Acta volante de exámenes</b></p>
+                                <div class="divheader" id="T2">
+                                <p style="margin: 1mm 0mm 0mm 0mm;">____/____/_______<p>
+                                </div>
+                            </div>
+                            <p style="display: block; font-style: normal; margin: 3mm 1mm 0mm 1mm; padding: 0; border: 0; list-style: none;">Exámenes de alumnos <b>{{ examen }}</b></p>
+                            <p style="display: block; font-style: normal; margin: 3mm 1mm 0mm 1mm; padding: 0 0 1mm 0; border: 0; list-style: none;">Asignatura: <b font-style: bold;>{{ asignatura }}</b>, Curso: <b font-style: bold;>{{ curso }}</b> Año</p>
+                        </div>
+                    </th>
+                </tr>
+                <tr class="borde">
+                    <th rowspan="2" class="tiny" id="w1">N° de<BR>Orden</th>
+                    <th rowspan="2" scope="col" id="w2">N° de Permiso</th>
+                    <th rowspan="2" scope="col" id="w3">Apellido y Nombres</th>
+                    <th colspan="3" scope="col" class="tiny">Calificaciones</th>
+                    <th colspan="2" scope="col" class="tiny">N° de las bolillas</th>
+                    <th rowspan="2" scope="col" id="w4">Documento de<BR>Identidad</th>
+                </tr>
+                <tr>
+                    <th scope="col">Esc.</th>
+                    <th scope="col">Oral</th>
+                    <th scope="col">Prom</th>
+                    <th scope="col">Esc.</th>
+                    <th scope="col">Oral</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="2" class="tiny">A continuación del último alumno deberá llenar el secretario</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="border:0">
+                    <td style="border:0" colspan="9">
+                        <div class="divfooter">
+                            <p>Presidente________________________, vocal________________________, vocal________________________.</p>
+                            <table style="border:0">
+                                <tr style="border:0">
+                                    <td style="border:0; padding: 0 0 0 2mm;" colspan="2"> Paso de los Libres ____ de ______________ de 2012</td>
+                                    <td style="border:0;">Total de alumnos:__________</td>
+                                </tr>
+                                <tr style="border:0">
+                                    <td style="border:0"></td>
+                                    <td style="border:0"></td>
+                                    <td style="border:0">Aprobados: ________________</td>
+                                </tr>
+                                <tr style="border:0">
+                                    <td style="border:0"></td>
+                                    <td style="border:0"></td>
+                                    <td style="border:0">Aplazados: ________________</td>
+                                </tr>
+                                <tr style="border:0">
+                                    <td style="border:0"></td>
+                                    <td style="border:0"></td>
+                                    <td style="border:0">Ausentes:__________________</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody class="bordered" id="bordeintermedio">
+                {% for Alumno in Alumnos %}
                     <tr>
-                        <th scope="col">Esc.</th>
-                        <th scope="col">Oral</th>
-                        <th scope="col">Prom</th>
-                        <th scope="col">Esc.</th>
-                        <th scope="col">Oral</th>
+                        <th scope="row">{% cycle 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30 as numeral %}</th>
+                        <td>{{ Alumno.fecha_insc|date:"ymdHis" }}</td>
+                        <td class="izq">{{ Alumno.apellido }}, {{ Alumno.nombre }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="centro">{{ Alumno.dni }}</td>
                     </tr>
-                </thead>
-                <tfoot>
+                {% endfor %}
+                {% for i in cantL %}
                     <tr>
-                        <td></td>
-                        <td colspan="2" >A continuación del último alumno deberá llenar el secretario</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                </tfoot>
-                <tbody class="bordered">
-                    <tr>
-                        <th scope="row">#</th>
-                        <td>{{n-permiso}}</td>
-                        <td>{{apellidoYnombre}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>{{DNI}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">#</th>
-                        <td>{{n-permiso}}</td>
-                        <td>{{apellidoYnombre}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>{{DNI}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">#</th>
-                        <td>{{n-permiso}}</td>
-                        <td>{{apellidoYnombre}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>{{DNI}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">#</th>
-                        <td>{{n-permiso}}</td>
-                        <td>{{apellidoYnombre}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>{{DNI}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">#</th>
-                        <td>{{n-permiso}}</td>
-                        <td>{{apellidoYnombre}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>{{DNI}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">#</th>
-                        <td>{{n-permiso}}</td>
-                        <td>{{apellidoYnombre}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>{{DNI}}</td>
-                    </tr>
-
-                </tbody>
-            </table>
+                        <th scope="row">{% cycle numeral %}</th>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                     </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </body>
     <footer>
     </footer>

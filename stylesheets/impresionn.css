@@ -2,14 +2,85 @@ body, p, div, h1, h2, h3, p, ul, ol, li, img, header, section, aside, footer, bu
 margin: 0; padding: 0; border: 0; list-style: none; margin-top: 0;
 }
 
+.divheader{
+    width: 18cm;
+    weight: 25mm;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    border:1px solid #000000;
+}
+
+.divfooter{
+    width: 18cm;
+    weight: 25mm;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    border:1px solid #000000;
+}
+
+.divfooter p {
+    font-family: sans-serif;
+    font-size: 10pt;
+    margin: 3mm 1mm 2mm 2mm;
+}
+
 table {
     font-family: sans-serif;
     font-size: 10pt;
     line-height: 5mm;
     font-style: normal;
-    border-spacing: 0;}
+    border-spacing: 0;
+    width: 18cm;
+}
+
+#resto {
+    font-family: serif;
+    text-align: left;
+    font-size: 12pt;
+    font-style: normal;
+    border-spacing: 0;
+    width: 18cm;
+    weight: 25mm;
+}
+
+#w1{width: 10mm;}
+
+#w2{width: 20mm;}
+
+#w3{width: 80mm;}
+
+#w4{width: 25mm;}
+
+.izq {text-align: left;}
+
+.centro {text-align: center;}
+
+div#T1 {
+    position: relative;
+    top: -10mm;
+    float: right;
+    width: 65mm;
+    height: 6mm;
+    text-align: center;
+    margin: 2mm 2mm 2mm 2mm;
+}
+
+div#T2 {
+    position: relative;
+//    top: 2mm;
+//    right: -110mm;
+    float: right;
+    width: 40mm;
+    height: 6mm;
+    text-align: center;
+    margin: 6mm 0mm 0mm 0mm;
+    padding: 0;
+}
 
 thead{
+    line-height: 3mm;
     font-weight: bold;
 }
 
@@ -60,6 +131,8 @@ tfoot td {
 .bordered tr:hover
 {
   background: #fbf8e9;
+      text-decoration: none;
+    text-shadow: 1px 1px 5px #000000;
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -87,3 +160,22 @@ tfoot td {
     -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
     box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
 }
+
+#bordeintermedio td, th {
+    border:1px solid #000000;
+}
+
+.sinborde {
+    border:0px solid #ffffff;
+    width: 18cm;
+    weight: 25mm;
+}
+
+h2, h3, h4 {margin-left: 3mm;}
+
+@media print {
+    * {color: black;}
+    .pagina {page-break-before: always;  }
+} 
+
+.salto {page-break-before: always;  }
