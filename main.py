@@ -1,4 +1,5 @@
 import cgi
+
 import os
 import math
 #import datetime
@@ -16,7 +17,7 @@ class Preceptor(db.Model):
     email = db.EmailProperty(required=True)
 
 
-class Alumno(db.Model):
+class Alumnos(db.Model):
     nombre = db.StringProperty(required=True, multiline=False)
     apellido = db.StringProperty(required=True, multiline=False)
     dni = db.IntegerProperty(required=True)
@@ -74,7 +75,7 @@ class Preceptores(webapp.RequestHandler):
 
 class Inscribir(webapp.RequestHandler):
     def post(self):
-        alumno = Alumno(nombre=cgi.escape(self.request.get('nombre')),
+        alumno = Alumnos(nombre=cgi.escape(self.request.get('nombre')),
                         apellido=cgi.escape(self.request.get('apellido')),
                         dni=int(cgi.escape(self.request.get('dni'))),
                         curso=int(cgi.escape(self.request.get('curso'))),
@@ -121,23 +122,23 @@ class ActaVolante(webapp.RequestHandler):
                 6: Seis,
                 7: Siete}
 
-        Alumnos_consulta = Alumno.all()
+        Alumnos_consulta = Alumnos.all()
         Alumnos_consulta.filter("examen =", examenA)
         Alumnos_consulta.filter("curso =", cursoA)
         Alumnos_consulta.filter("asignatura =", asignaturaA)
         Alumnos_consulta.order("apellido")
-        Alumnos = Alumnos_consulta.fetch(300)
+        Alumnos_f = Alumnos_consulta.fetch(300)
 
-        cant = len(Alumnos)
+        cant = len(Alumnos_f)
         cantL = range(int(math.ceil(cant/30.0))*30 - cant)
 
-        valores_plantilla = {'Alumnos': Alumnos,
+        valores_plantilla = {'Alumnos': Alumnos_f,
                                 'examen': examenA,
                                 'asignatura': asignaturaA,
                                 'curso': cursoT[cursoA](),
                                 'cant': cant,
                                 'cantL': cantL,
-                                'num': len(Alumnos)}
+                                'num': len(Alumnos_f)}
 
         path = os.path.join(os.path.dirname(__file__), "actavolante.html")
         self.response.out.write(template.render(path, valores_plantilla))
@@ -145,7 +146,7 @@ class ActaVolante(webapp.RequestHandler):
 
 class ListaActas(webapp.RequestHandler):
     def get(self):
-        Alumnos_consulta = Alumno.all()
+        Alumnos_consulta = Alumnos.all()
         Alumnos_consulta.order("examen")
         Alumnos_consulta.order("curso")
         Alumnos_consulta.order("asignatura")
